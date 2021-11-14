@@ -39,9 +39,14 @@ def euclidesExtend(entire, modulo_number):
     return variable1
 
 
+def h(firm):
+    return firm % 25
+
+
 if __name__ == '__main__':
     p = numberPrime()
     q = numberPrime()
+    my_firm = 5
     print("p -> ", p)
     print("q -> ", q)
     n = p * q
@@ -71,8 +76,16 @@ if __name__ == '__main__':
             msg_encrypted = int(input("Ingrese mensaje encriptado:"))
             msg = (msg_encrypted ** d) % n
             print(msg)
-
         elif option == "3":
+            firm = (my_firm ** d) % n
+            print(firm)
+        elif option == "4":
+            e_public = int(input("Ingrese clave publica del otro usuario:"))
+            n_otherUser = int(input("Ingrese N del otro usuario:"))
+            firm_encrypted = int(input("Ingrese Firma encriptado:"))
+            firm_decry = (firm_encrypted ** e_public) % n_otherUser
+            print(firm_decry)
+        elif option == "5":
             break
         else:
             print("No es una opción valida")
